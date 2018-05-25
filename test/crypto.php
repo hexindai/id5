@@ -47,7 +47,7 @@ function decrypt($str, $key, $iv) {
 function pkcs_unpad($str) {
     $pad = ord(substr($str, -1));
     if ($pad > strlen($str)) return false;
-    if (strspn($str, chr($pad), strlen($str) - $pad) != $pad) {
+    if (strspn($str, chr($pad), strlen($str) - $pad) !== $pad) {
         return false;
     }
     return substr($str, 0, -1 * $pad);
