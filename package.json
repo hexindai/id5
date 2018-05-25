@@ -1,0 +1,26 @@
+{
+  "name": "id5",
+  "version": "0.0.1",
+  "description": "国证通身份证 NodeJS SDK",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js lib test",
+    "fix": "npm run lint -- --fix",
+    "test": "npm run lint && jest --forceExit",
+    "test-cov": "npm run test -- --coverage"
+  },
+  "keywords": [],
+  "author": "Runrioter Wung <runrioter@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-egg": "^7.0.0",
+    "eslint-plugin-jest": "^21.15.2",
+    "jest": "^22.4.4"
+  },
+  "dependencies": {
+    "iconv-lite": "^0.4.23",
+    "soap": "^0.24.0",
+    "strong-soap": "^1.9.0"
+  }
+}
