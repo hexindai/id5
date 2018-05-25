@@ -29,7 +29,7 @@ const id5 = new ID5({
   iv: '87651234',
 });
 
-const matched = await id5.validateIDInfo('马冬梅', '21062419820628XXXX');
+const matched = await id5.validateIDInfo('马冬梅', '21062419820628XXXX');
 
 if (matched) {
   // ...
