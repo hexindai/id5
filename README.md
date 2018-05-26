@@ -13,7 +13,7 @@ id5
 ### Installation
 
 ```bash
-npm i -id5 -S
+npm i id5 -S
 ```
 
 ### Usage
