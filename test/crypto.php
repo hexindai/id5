@@ -26,6 +26,7 @@ if (function_exists($function_name)) {
 
 function encrypt($str, $key , $iv) {
   $block_size = mcrypt_get_block_size(MCRYPT_DES, MCRYPT_MODE_CBC);
+  $str = mb_convert_encoding($str, 'GBK', 'UTF-8');
   $str = pkcs_pad($str, $block_size);
   $data = mcrypt_encrypt(MCRYPT_DES, $key, $str, MCRYPT_MODE_CBC, $iv);
   return base64_encode($data);
