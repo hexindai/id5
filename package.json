@@ -1,6 +1,6 @@
 {
   "name": "id5",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "国证通身份证 NodeJS SDK",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Runrioter Wung <runrioter@gmail.com>",
   "license": "MIT",
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-egg": "^7.0.0",
