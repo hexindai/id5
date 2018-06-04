@@ -34,7 +34,7 @@ class ID5 {
         client.querySingle(params, (err, result) => {
           if (err) return reject(err);
           resolve(result);
-        });
+        }, { timeout: 5000 });
       });
     });
     try {
