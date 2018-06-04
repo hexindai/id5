@@ -1,6 +1,6 @@
 {
   "name": "id5",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "国证通身份证 NodeJS SDK",
   "main": "index.js",
   "scripts": {
