@@ -38,5 +38,11 @@ if (matched) {
 }
 ```
 
+### Debug
+
+Set `DEBUG` env variable to run your program.
+
+`DEBUG=id5` npm run \<some-script\>
+
 ### LICENSE
 [MIT](LICENSE)
