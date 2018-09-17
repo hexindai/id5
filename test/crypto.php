@@ -25,31 +25,14 @@ if (function_exists($function_name)) {
 }
 
 function encrypt($str, $key , $iv) {
-  $block_size = mcrypt_get_block_size(MCRYPT_DES, MCRYPT_MODE_CBC);
   $str = mb_convert_encoding($str, 'GBK', 'UTF-8');
-  $str = pkcs_pad($str, $block_size);
-  $data = mcrypt_encrypt(MCRYPT_DES, $key, $str, MCRYPT_MODE_CBC, $iv);
+  $data = openssl_encrypt($str, 'DES-CBC', $key, OPENSSL_RAW_DATA, $iv);
   return base64_encode($data);
-}
-
-function pkcs_pad($str, $block_size) {
-  $pad = $block_size - (strlen($str) % $block_size);
-  return $str . str_repeat(chr($pad), $pad);
 }
 
 function decrypt($str, $key, $iv) {
   $data = base64_decode($str);
-  $str = mcrypt_decrypt(MCRYPT_DES, $key, $data, MCRYPT_MODE_CBC, $iv);
-  $str = pkcs_unpad($str);
+  $str = openssl_decrypt($data, 'DES-CBC', $key, OPENSSL_RAW_DATA, $iv);
   $str = mb_convert_encoding($str, 'UTF-8', 'GBK');
   return $str;
-}
-
-function pkcs_unpad($str) {
-    $pad = ord(substr($str, -1));
-    if ($pad > strlen($str)) return false;
-    if (strspn($str, chr($pad), strlen($str) - $pad) !== $pad) {
-        return false;
-    }
-    return substr($str, 0, -1 * $pad);
 }
