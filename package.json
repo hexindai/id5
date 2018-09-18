@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint index.js lib test",
     "fix": "npm run lint -- --fix",
-    "test": "npm run lint && jest --forceExit",
-    "test-cov": "npm run test -- --detectOpenHandles"
+    "test": "npm run lint && jest --detectOpenHandles",
+    "test-cov": "npm run test -- --coverage"
   },
   "keywords": [],
   "author": "Runrioter Wung <runrioter@gmail.com>",
